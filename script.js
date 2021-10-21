@@ -12,6 +12,11 @@ function createListElement() {
     li.appendChild(document.createTextNode(input.value));
     ul.appendChild(li);
     input.value = "";
+    var trashButton = document.createElement("button");
+    trashButton.setAttribute("class", "delete");
+    trashButton.appendChild(document.createTextNode("Delete"));
+    trashButton.addEventListener("click", deleteItem);
+    li.appendChild(trashButton);
 }
 
 function addListAfterClick() {
@@ -33,6 +38,12 @@ function addDoneClass(e) {
     
 }
 
+function deleteItem(e) {
+    if (e.target.className === "delete"){
+        e.target.parentElement.remove();
+    }
+    
+}
 
 
 button.addEventListener("click", addListAfterClick)
