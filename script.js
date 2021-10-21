@@ -26,6 +26,17 @@ function addListAfterEnter() {
     }
     }
 
+function addDoneClass(e) {
+    if (e.target.tagName === "LI"){
+        e.target.classList.toggle("done");
+    }
+    
+}
+
+
+
 button.addEventListener("click", addListAfterClick)
 
 input.addEventListener("keypress", addListAfterEnter)
+
+ul.addEventListener("click", addDoneClass)
