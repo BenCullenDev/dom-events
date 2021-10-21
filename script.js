@@ -8,6 +8,18 @@ button.addEventListener("click", function() {
         var li = document.createElement("li");
         li.appendChild(document.createTextNode(input.value));
         ul.appendChild(li);
+        input.value = "";
+    }
+    
+})
+
+input.addEventListener("keypress", function() {
+    if (input.value.length > 0 && event.keyCode === 13) {
+        console.log("You clicked the button");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(input.value));
+        ul.appendChild(li);
+        input.value = "";
     }
     
 })
